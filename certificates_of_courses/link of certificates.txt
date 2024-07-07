@@ -11,3 +11,9 @@ https://wlc.unu.edu/certificates/7e2dc76bfd5342e5a37aa4a82bc16ac7
 
 THE INTRODUCTION TO GEOSPATIAL DATA ANALYSIS WITH CHATGPT AND GOOGLE EARTH ENGINE
 https://wlc.unu.edu/certificates/692bb9bed1ad44908ce88c49e1c9ad77
+
+Python: 
+https://www.kaggle.com/learn/certification/ramizmoktader/python 
+
+Introduction to Neural Network
+https://simpli.app.link/6nFPMMXR1Kb 
