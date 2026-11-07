@@ -46,7 +46,7 @@ assets/js-yaml.min.js  YAML reader library
 
 ## Turning on GitHub Pages
 
-Repository **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `main`, folder `/ (root)`, then **Save**.
+Repository **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `master`, folder `/ (root)`, then **Save**.
 
 - If this repository is named `ramiz-moktader.github.io`, the site is at **https://ramiz-moktader.github.io/**
 - Otherwise it is at `https://ramiz-moktader.github.io/<repository-name>/`
