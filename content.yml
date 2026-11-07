@@ -1,0 +1,389 @@
+# ============================================================
+#  WEBSITE CONTENT — this is the only file you need to edit.
+#
+#  How to update:
+#   1. Open this file on GitHub and click the pencil (Edit) icon.
+#   2. Change text, or copy an existing item and edit the copy.
+#   3. Click "Commit changes". The site updates in about 1 minute.
+#
+#  Rules that keep the file working:
+#   - Keep the spaces at the start of each line exactly as they are
+#     (use spaces, never tabs).
+#   - Each new item in a list starts with "- ".
+#   - If a line contains a colon ":" followed by a space, put the
+#     whole text inside double quotes "like: this".
+#   - Leave a field empty ("") or delete the line if you don't need it.
+#   - If you make a mistake, the site shows which line has the problem.
+# ============================================================
+
+profile:
+  name: "Md. Moktader Moula"
+  short_name: "Moktader"
+  role: "GeoAI & remote sensing researcher"
+  status: "Seeking PhD positions for 2027 in GeoAI, remote sensing and environmental data science"
+  location: "Chattogram, Bangladesh"
+  coordinates: "22.34° N · 91.83° E"
+  email: "ramizmoktader064@gmail.com"
+  github: "https://github.com/ramiz-moktader"
+  google_scholar: ""          # paste your Google Scholar profile link here
+  orcid: ""                   # e.g. https://orcid.org/0000-0000-0000-0000
+  linkedin: ""
+  researchgate: ""
+  cv_url: ""                  # e.g. files/cv.pdf after you upload your CV into a "files" folder
+  photo: ""                   # e.g. images/photo.jpg after you upload a photo into an "images" folder
+  summary: >-
+    I build machine learning methods that map water, forests and cities from
+    satellite imagery. I trained as a forester at the University of Chittagong,
+    taught myself Python and deep learning, and now work on fine-tuning
+    geospatial foundation models and on physics-guided networks for surface
+    water mapping in Bangladesh.
+
+# Short numbers shown under the introduction. Keep 3–4 items.
+highlights:
+  - value: "9"
+    label: "papers and manuscripts: 2 out, 3 under review, 4 in preparation"
+  - value: "150+"
+    label: "learners from 10+ countries in my free Earth Engine course"
+  - value: "9"
+    label: "funded research and field projects contributed to since 2021"
+  - value: "8"
+    label: "open-source geospatial tools and apps on GitHub"
+
+# A short personal research statement. Each item is one paragraph.
+statement:
+  - >-
+    My path into this field began with forestry fieldwork. I wanted to know
+    where streams run in the hilly Chittagong Hill Tracts, how vegetation
+    changed around the Rohingya camps, and how city green space relates to
+    air quality. Answering those questions at scale led me to Google Earth
+    Engine, and then to machine learning.
+  - >-
+    My MS thesis trained neural networks to find hilly streams in Sentinel
+    imagery using combinations of normalized difference indices. Since then
+    my work has moved toward the methods themselves: how to adapt large
+    pretrained models such as NASA–IBM's Prithvi to local mapping tasks, and
+    how to build networks that use spectral physics, such as strong water
+    absorption in the near-infrared, instead of learning texture alone.
+  - >-
+    I also care about honest evaluation. Much of my recent code deals with
+    spatial cross-validation and leakage between training and test data,
+    which is easy to get wrong in remote sensing. For a PhD I want to work
+    on geospatial foundation models and physics-informed deep learning for
+    water, land cover and climate risk in data-poor regions.
+
+# Research themes. "tags" links each theme to related work below.
+themes:
+  - title: "Geospatial foundation models"
+    text: "Fine-tuning pretrained Earth observation models such as Prithvi, and testing satellite embeddings such as AlphaEarth, for mapping tasks with few labels."
+    keyword: "GFM"
+  - title: "Surface water mapping"
+    text: "Segmenting rivers, ponds and hill streams from PlanetScope and Sentinel imagery, with networks guided by near-infrared absorption."
+    keyword: "Water"
+  - title: "Land use and urban climate"
+    text: "Land cover change in Chattogram, its link to land surface temperature, and the role of urban green space in air quality."
+    keyword: "LULC"
+  - title: "Forests and watersheds"
+    text: "Watershed management plans, forest carbon, and cyclone windthrow risk for tree species planted in coastal Bangladesh."
+    keyword: "Forest"
+
+# ------------------------------------------------------------
+# PUBLICATIONS
+# status must be one of: published, preprint, under_review, in_preparation
+# first_author: true marks papers where you are first author
+# theme: one of the keywords above (GFM, Water, LULC, Forest)
+# ------------------------------------------------------------
+publications:
+  - title: "Impact of urban green spaces on air quality: A study of PM10 reduction across diverse climates"
+    authors: "Islam, A., Pattnaik, N., Moula, M. M., Rötzer, T., Pauleit, S., & Rahman, M. A."
+    venue: "Science of The Total Environment"
+    year: "2024"
+    status: published
+    theme: LULC
+    link: "https://doi.org/10.1016/j.scitotenv.2024.176770"
+    link_label: "DOI"
+    my_role: "Satellite data analysis across cities in several climate zones."
+
+  - title: "An interactive Google Earth Engine application for global multi-scale vegetation analysis using NDVI thresholding"
+    authors: "Moula, M. M., Shonom, I. J., Islam, A., & Hossain, M. M."
+    venue: "arXiv preprint 2509.01628"
+    year: "2025"
+    status: preprint
+    first_author: true
+    theme: Forest
+    link: "https://doi.org/10.48550/arXiv.2509.01628"
+    link_label: "arXiv"
+    my_role: "Designed and built the Earth Engine application and wrote the paper."
+
+  - title: "A remote sensing and statistical modelling framework for assessing the long-term role of neighbourhood urban greenspace to PM10 across diverse climate zones"
+    authors: "Islam, A., Pattnaik, N., Moula, M. M., Rötzer, T., Pauleit, S., & Rahman, M. A."
+    venue: "MethodsX"
+    status: under_review
+    theme: LULC
+
+  - title: "Evaluating the role of Genus Ficus in carbon stock and biodiversity in Chattogram, Bangladesh"
+    authors: "Nandi, R., Jashimuddin, M., Rahman, R., Musa, M. B., Moula, M. M., & Sen Gupta, S."
+    venue: "Discover Forests"
+    status: under_review
+    theme: Forest
+    my_role: "Data analysis and drafting."
+
+  - title: "Understanding water security in South Asian cities: A study from Nepal and Bangladesh"
+    authors: ""
+    venue: ""
+    status: under_review
+    theme: Water
+
+  - title: "Comparing PlanetScope, Sentinel-2 and AlphaEarth satellite embeddings for land use and land cover mapping in Chattogram City Corporation"
+    authors: "Moula, M. M., et al."
+    venue: "Target: Scientific Reports"
+    status: in_preparation
+    first_author: true
+    theme: GFM
+    my_role: "Four-class mapping with Random Forest, SVM, XGBoost and an MLP; spatially blocked cross-validation (1 km blocks) on 993 reference points; corrected resampled t-tests."
+
+  - title: "Physics-guided NIR-absorption attention network for water segmentation in 4-band PlanetScope imagery"
+    authors: "Moula, M. M., et al."
+    venue: "Target: Q1 journal"
+    status: in_preparation
+    first_author: true
+    theme: Water
+    my_role: "Designed the NIR-absorption attention module and benchmarked it against ImageNet-pretrained baselines on water datasets from several cities."
+
+  - title: "Advancing surface waterbody mapping in Bangladesh with GeoAI: Fine-tuning the Prithvi geospatial foundation model for improved segmentation"
+    authors: "Moula, M. M., et al."
+    venue: ""
+    status: in_preparation
+    first_author: true
+    theme: GFM
+
+  - title: "Analyzing the impact of land use/land cover transitions on land surface temperature in Chittagong City: A remote sensing and machine learning approach"
+    authors: "Moula, M. M., et al."
+    venue: ""
+    status: in_preparation
+    first_author: true
+    theme: LULC
+
+# Theses
+theses:
+  - degree: "MS thesis"
+    title: "An effort to train AI models to identify hilly streams in Sentinel imagery using combinations of normalized difference indices"
+    place: "University of Chittagong"
+    link: "https://github.com/ramiz-moktader/MS-thesis"
+    link_label: "Code"
+  - degree: "BSc dissertation"
+    title: "Changes in vegetation cover at the Rohingya refugee camps between 2018 and 2021"
+    place: "University of Chittagong"
+
+# ------------------------------------------------------------
+# SOFTWARE AND PROJECTS
+# featured: true shows the project as a large card at the top
+# ------------------------------------------------------------
+software:
+  - name: "GeoFlow"
+    featured: true
+    summary: "An Earth Engine-style Python framework for Earth observation, GIS, spatial statistics and geospatial machine learning."
+    details:
+      - "Familiar Earth Engine syntax (filterBounds, filterDate, reduceRegion, Map.addLayer) on top of the open Python stack."
+      - "Loads Sentinel-2 and other collections from STAC catalogs such as Microsoft Planetary Computer, and NASA GEDI LiDAR through Earthdata."
+      - "Leakage-safe spatial machine learning: spatial blocking, buffered spatial cross-validation and leakage reports."
+      - "Spatial statistics (Moran's I, LISA, Geary's C, semivariograms) and PyTorch patch datasets for deep learning."
+    code: |
+      import geoflow as gf
+      aoi = gf.Rectangle([91.76, 22.27, 91.90, 22.40])  # Chattogram
+      image = (gf.ImageCollection.from_stac("sentinel-2-l2a", geometry=aoi,
+                   start="2024-01-01", end="2024-02-29")
+               .mask_clouds().median().clip(aoi))
+      image.ndvi().plot_map(cmap="RdYlGn", title="NDVI")
+    tech: ["Python", "PyTorch", "STAC", "PySAL", "Rasterio"]
+    repo: "https://github.com/ramiz-moktader/geoflow"
+    link: "https://ramiz-moktader.github.io/geoflow/"
+    link_label: "Documentation"
+
+  - name: "Spatial Point Splitter"
+    summary: "Splits reference points into train, validation and test sets with a Morton (Z-order) curve and spatial stratification, to reduce spatial autocorrelation in LULC model evaluation."
+    tech: ["Python", "Spatial ML"]
+    repo: "https://github.com/ramiz-moktader/geo-point-splitter"
+
+  - name: "GeoPatch AI (QGIS plugin)"
+    summary: "Generates, filters and exports image patches and label masks from georeferenced rasters to train segmentation models, with train/validation/test splitting."
+    tech: ["QGIS", "Python", "Deep learning"]
+    repo: "https://github.com/ramiz-moktader/geopatch_qgis_plug_in"
+
+  - name: "KML Grid Generator"
+    summary: "Tiles any area of interest with a non-overlapping grid of uniform KML polygons for systematic image download, labelling and field surveys."
+    tech: ["Python", "KML"]
+    repo: "https://github.com/ramiz-moktader/kml_replicator"
+
+  - name: "Dendro Metrics"
+    summary: "A Streamlit app that estimates tree biomass from height, diameter and wood density in uploaded forest inventory data."
+    tech: ["Python", "Streamlit", "Forestry"]
+    repo: "https://github.com/ramiz-moktader/dendro-metrics"
+
+  - name: "Earthquake Tracking Web Map"
+    summary: "A Leaflet web map that pulls live USGS earthquake data and shows events by date."
+    tech: ["JavaScript", "Leaflet", "API"]
+    repo: "https://github.com/ramiz-moktader/Earthquake-tracking"
+    link: "https://ramiz-moktader.github.io/Earthquake-tracking/"
+    link_label: "Live map"
+
+  - name: "Social Data Sorter"
+    summary: "A Streamlit tool for cleaning and sorting survey data exported from field data collection."
+    tech: ["Python", "Streamlit"]
+    repo: "https://github.com/ramiz-moktader/sorting-data"
+    link: "https://sorting-data.streamlit.app/"
+    link_label: "Open app"
+
+  - name: "PPT Text Extractor"
+    summary: "Batch-extracts text boxes from folders of PowerPoint files into Excel sheets."
+    tech: ["Python", "python-pptx"]
+    repo: "https://github.com/ramiz-moktader/extracting-text-from-ppt"
+
+# ------------------------------------------------------------
+# EXPERIENCE (newest first)
+# ------------------------------------------------------------
+experience:
+  - role: "Program Officer"
+    org: "CORE (Cooperation for Resource Efficiency)"
+    dates: "Nov 2024 – Present"
+    points:
+      - "Mapped and analysed more than 500 km² of geospatial data for project planning."
+      - "Built monitoring and evaluation frameworks for 5+ projects."
+      - "Trained and mentored a team of 20 research assistants."
+
+  - role: "Research Assistant"
+    org: "University of Chittagong"
+    dates: "Sep 2023 – Sep 2024"
+    project: "SuLMER; Watershed Management Plans for Teknaf Wildlife Sanctuary and Inani National Park"
+    points:
+      - "Led 15 enumerators in a survey of 500+ households, finished two weeks early."
+      - "Analysed 10,000+ records in Python that informed three watershed management plans."
+
+  - role: "Research Assistant"
+    org: "University of Dhaka"
+    dates: "Oct 2022 – Jan 2024"
+    project: "Impact of the Rohingya influx on wildlife and society"
+    points:
+      - "Analysed survey data from 500+ people for a PhD project and wrote three summary reports."
+
+  - role: "Trainer"
+    org: "Community Development Centre (CODEC)"
+    dates: "Aug 2023"
+    points:
+      - "Ran a three-day workshop for 40 staff on SWMaps, KoboToolbox, Excel and SPSS."
+
+  - role: "Research Assistant"
+    org: "University of Chittagong"
+    dates: "Jul 2022 – Jul 2023"
+    project: "Watershed management in Cox's Bazar; Sustainable urban water management in the Hindu Kush Himalaya; USAID ECO LIFE"
+    points:
+      - "Produced 10+ maps and visualizations for three concurrent projects."
+      - "Contributed analysis to two manuscripts and led field data collection at three sites."
+
+  - role: "Research Assistant"
+    org: "University of Chittagong"
+    dates: "Jul 2021 – Nov 2023"
+    project: "Roads and Highways Department PhD project"
+    points:
+      - "Processed 100+ Sentinel-2 images in Earth Engine to track five years of land use change."
+      - "Designed a random plot layout in Earth Engine for a 300+ plot vegetation survey."
+
+  - role: "Intern"
+    org: "US Forest Service International Programs"
+    dates: "Jan 2022 – Jun 2022"
+    project: "Community Partnerships to Strengthen Sustainable Development (Compass)"
+    points:
+      - "Made land cover maps for a 400 km² study area."
+      - "Managed a beneficiary database of 2,000+ people and produced 20+ outreach materials."
+
+  - role: "Research Assistant"
+    org: "University of Chittagong"
+    dates: "Dec 2021 – Jan 2022"
+    project: "Village Common Forest management by indigenous communities in the Chittagong Hill Tracts"
+    points:
+      - "Automated 70+ map layouts with ArcPy, saving about 20 hours of manual work."
+
+# ------------------------------------------------------------
+# EDUCATION AND AWARDS
+# ------------------------------------------------------------
+education:
+  - degree: "MS in Forestry"
+    place: "Institute of Forestry and Environmental Sciences, University of Chittagong"
+    dates: "Session 2020 · exams 2023"
+    grade: "CGPA 3.56 / 4.00"
+  - degree: "BSc (Hons) in Forestry"
+    place: "Institute of Forestry and Environmental Sciences, University of Chittagong"
+    dates: "Session 2015–16 · exams 2021"
+    grade: "CGPA 3.47 / 4.00"
+
+awards:
+  - title: "National Science and Technology (NST) Fellowship"
+    org: "Ministry of Science and Technology, Bangladesh"
+    year: "2022–2023"
+
+# ------------------------------------------------------------
+# TEACHING AND COMMUNITY
+# ------------------------------------------------------------
+teaching:
+  - title: "Geospatial Programming Course"
+    role: "Founder and trainer"
+    dates: "Dec 2023 – Jun 2024, Cohort 2 ongoing"
+    text: "A free, six-month online course in Bengali that takes students from their first line of JavaScript to Earth Engine analysis: image collections, spectral indices, reducers, thresholding, exporting and supervised classification. Over 150 participants from 10+ countries joined."
+    link: "https://geocodinglab.com"
+    link_label: "geocodinglab.com"
+  - title: "Haate Haat Foundation"
+    role: "Co-founder and governing board member"
+    dates: "Feb 2013 – Present"
+    text: "A volunteer organisation for the education of underprivileged children and disaster relief. Started Haate Haat School for 120 children, where I taught a class of 30+ students, and coordinated relief for 400+ families."
+    link: "http://haatehaat.com"
+    link_label: "haatehaat.com"
+
+# ------------------------------------------------------------
+# SKILLS
+# ------------------------------------------------------------
+skills:
+  - group: "Programming"
+    items: ["Python (expert)", "JavaScript", "SQL", "R (basic)", "C/C++ (basic)"]
+  - group: "Machine learning"
+    items: ["PyTorch", "TensorFlow", "TorchGeo", "scikit-learn", "XGBoost", "Foundation model fine-tuning"]
+  - group: "Geospatial"
+    items: ["Google Earth Engine (JS & Python)", "GDAL", "Rasterio", "GeoPandas", "ArcGIS / ArcPy", "QGIS", "FRAGSTATS"]
+  - group: "Data & apps"
+    items: ["Pandas", "NumPy", "Matplotlib", "Streamlit", "Gradio", "KoboToolbox", "Survey Solutions"]
+  - group: "Imagery"
+    items: ["PlanetScope", "Sentinel-1/2", "Landsat", "GEDI LiDAR", "Satellite embeddings"]
+
+# ------------------------------------------------------------
+# COURSES AND CERTIFICATES
+# ------------------------------------------------------------
+courses:
+  - title: "AI, Machine Learning and Deep Learning Research Program"
+    org: "Mahdy Research Academy"
+    link: "https://drive.google.com/file/d/1qLiJfhP1McSx-u4tusvD79utZvzctzfM/view?usp=sharing"
+  - title: "Big Data Analysis for Water-Related Applications"
+    org: "United Nations University, Water Learning Center"
+    link: "https://wlc.unu.edu/certificates/8317b48a7ffc4af29a3540b9fcbb2772"
+  - title: "Active and Passive Satellite Data Analysis for Surface Water Flood Mapping"
+    org: "United Nations University, Water Learning Center"
+    link: "https://wlc.unu.edu/certificates/78072154292748be8660589e01929c1a"
+  - title: "Spatiotemporal Drought Assessment with Google Earth Engine"
+    org: "United Nations University, Water Learning Center"
+    link: "https://wlc.unu.edu/certificates/7e2dc76bfd5342e5a37aa4a82bc16ac7"
+  - title: "Geospatial Data Analysis with ChatGPT and Google Earth Engine"
+    org: "United Nations University, Water Learning Center"
+    link: "https://wlc.unu.edu/certificates/692bb9bed1ad44908ce88c49e1c9ad77"
+  - title: "Python"
+    org: "Kaggle"
+    link: "https://www.kaggle.com/learn/certification/ramizmoktader/python"
+  - title: "Introduction to Neural Networks"
+    org: "Simplilearn"
+    link: "https://simpli.app.link/6nFPMMXR1Kb"
+  - title: "Water Security Issues in the Himalayan Region and Assessment Tools"
+    org: ""
+    link: "https://drive.google.com/file/d/1Ui--47F0S7pg3y5lauXMJqdXDtmA3X63/view?usp=sharing"
+  - title: "Sustainable Forest Management in a Changing World"
+    org: ""
+    link: "https://drive.google.com/file/d/1xcKu2_K-bdzUWUN4DmDM40mZy3AkDXUl/view?usp=sharing"
+
+# Shown at the bottom of the page.
+references_note: "References from my MS supervisor and faculty at the Institute of Forestry and Environmental Sciences, University of Chittagong, are available on request."
+updated: "November 2026"
