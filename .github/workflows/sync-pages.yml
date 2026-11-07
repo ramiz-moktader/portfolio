@@ -1,0 +1,18 @@
+# Copies every change on master to the gh-pages branch, which GitHub Pages publishes.
+# You never need to edit this file: just edit content.yml on master.
+name: Update website
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Publish master to gh-pages
+        run: git push --force origin HEAD:refs/heads/gh-pages

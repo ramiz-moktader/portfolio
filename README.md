@@ -44,12 +44,14 @@ assets/style.css    colours, fonts, layout
 assets/js-yaml.min.js  YAML reader library
 ```
 
-## Turning on GitHub Pages
+## How publishing works
 
-Repository **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `master`, folder `/ (root)`, then **Save**.
+The live site is **https://ramiz-moktader.github.io/portfolio/**.
 
-- If this repository is named `ramiz-moktader.github.io`, the site is at **https://ramiz-moktader.github.io/**
-- Otherwise it is at `https://ramiz-moktader.github.io/<repository-name>/`
+GitHub Pages publishes the `gh-pages` branch. Whenever you commit to `master`, the
+"Update website" action (`.github/workflows/sync-pages.yml`) copies `master` to `gh-pages`,
+and the site updates within a minute or two. Always edit on `master`.
+You can watch progress in the repository's **Actions** tab.
 
 ## Previewing on your computer
 
