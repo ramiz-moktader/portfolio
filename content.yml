@@ -38,6 +38,31 @@ profile:
     geospatial foundation models and on physics-guided networks for surface
     water mapping in Bangladesh.
 
+# Big headings for each section. Change the words freely.
+headings:
+  research: "Mapping water and land with models that understand the physics"
+  publications: "Papers and manuscripts"
+  software: "Tools I build and share"
+  experience: "Research and field experience"
+  education: "Education and awards"
+  teaching: "Teaching and community"
+  skills: "Skills and training"
+  contact: "Let's talk about research"
+
+# Caption under the interactive satellite scene at the top.
+scene_caption: "A synthetic four-band scene, like the PlanetScope data I work with. Switch the view or hover over a pixel to read its values."
+
+# "Currently working on" strip below the introduction. Keep 3–5 short items.
+now:
+  - title: "NAAM water segmentation"
+    text: "Physics-guided attention that uses near-infrared absorption to find water in 4-band PlanetScope imagery."
+  - title: "Satellite embeddings for land cover"
+    text: "Testing whether AlphaEarth embeddings match PlanetScope and Sentinel-2 for mapping Chattogram, for Scientific Reports."
+  - title: "Prithvi for Bangladesh's waterbodies"
+    text: "Fine-tuning NASA–IBM's geospatial foundation model for surface water segmentation."
+  - title: "Storm Stand"
+    text: "A hybrid physics–machine learning simulator of cyclone windthrow risk for five tree species."
+
 # Short numbers shown under the introduction. Keep 3–4 items.
 highlights:
   - value: "9"
@@ -189,11 +214,19 @@ software:
       - "Spatial statistics (Moran's I, LISA, Geary's C, semivariograms) and PyTorch patch datasets for deep learning."
     code: |
       import geoflow as gf
-      aoi = gf.Rectangle([91.76, 22.27, 91.90, 22.40])  # Chattogram
-      image = (gf.ImageCollection.from_stac("sentinel-2-l2a", geometry=aoi,
-                   start="2024-01-01", end="2024-02-29")
-               .mask_clouds().median().clip(aoi))
-      image.ndvi().plot_map(cmap="RdYlGn", title="NDVI")
+
+      # Chattogram, Bangladesh
+      aoi = gf.Rectangle([91.76, 22.27, 91.90, 22.40])
+
+      image = (
+          gf.ImageCollection.from_stac(
+              "sentinel-2-l2a", geometry=aoi,
+              start="2024-01-01", end="2024-02-29")
+          .mask_clouds()
+          .median()
+          .clip(aoi)
+      )
+      image.ndvi().plot_map(cmap="RdYlGn")
     tech: ["Python", "PyTorch", "STAC", "PySAL", "Rasterio"]
     repo: "https://github.com/ramiz-moktader/geoflow"
     link: "https://ramiz-moktader.github.io/geoflow/"
@@ -328,12 +361,16 @@ teaching:
     role: "Founder and trainer"
     dates: "Dec 2023 – Jun 2024, Cohort 2 ongoing"
     text: "A free, six-month online course in Bengali that takes students from their first line of JavaScript to Earth Engine analysis: image collections, spectral indices, reducers, thresholding, exporting and supervised classification. Over 150 participants from 10+ countries joined."
+    figure: "150+"
+    figure_label: "learners, 10+ countries"
     link: "https://geocodinglab.com"
     link_label: "geocodinglab.com"
   - title: "Haate Haat Foundation"
     role: "Co-founder and governing board member"
     dates: "Feb 2013 – Present"
     text: "A volunteer organisation for the education of underprivileged children and disaster relief. Started Haate Haat School for 120 children, where I taught a class of 30+ students, and coordinated relief for 400+ families."
+    figure: "120"
+    figure_label: "children in Haate Haat School"
     link: "http://haatehaat.com"
     link_label: "haatehaat.com"
 

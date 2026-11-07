@@ -16,7 +16,7 @@
 <body>
 <nav class="topbar" aria-label="Sections">
   <div class="topbar-inner">
-    <a class="brand" href="#top" id="brand">Moktader</a>
+    <a class="brand" href="#top"><i aria-hidden="true"></i><span id="brand">Moktader</span></a>
     <div class="navlinks">
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
@@ -25,14 +25,15 @@
       <a href="#teaching">Teaching</a>
       <a href="#contact">Contact</a>
     </div>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme">Theme</button>
   </div>
 </nav>
 
 <main id="top">
-  <div id="app" class="wrap"><p class="loading">Loading…</p></div>
+  <div id="app"><p class="loading wrap">Loading…</p></div>
 </main>
 
-<noscript><p class="wrap">This site needs JavaScript to show its content. The full text is in <a href="content.yml">content.yml</a>.</p></noscript>
+<noscript><p class="wrap" style="padding-block:40px">This site needs JavaScript to show its content. The full text is in <a href="content.yml">content.yml</a>.</p></noscript>
 
 <script src="assets/js-yaml.min.js"></script>
 <script src="assets/app.js"></script>
