@@ -26,10 +26,10 @@ profile:
   email: "ramizmoktader064@gmail.com"
   github: "https://github.com/ramiz-moktader"
   google_scholar: ""          # paste your Google Scholar profile link here
-  orcid: ""                   # e.g. https://orcid.org/0000-0000-0000-0000
+  orcid: "https://orcid.org/0009-0009-1069-9082"
   linkedin: ""
   researchgate: ""
-  cv_url: ""                  # e.g. files/cv.pdf after you upload your CV into a "files" folder
+  cv_url: "files/Moktader_Moula_CV.pdf"   # public CV: no phone number or referee contacts
   photo: "images/headshot.jpg"   # replace the file in the "images" folder to change it
   summary: >-
     I build machine learning methods that map water, forests and cities from
@@ -74,6 +74,7 @@ selected_work:
     status: "Manuscript in preparation · target: Scientific Reports"
     question: "Google's AlphaEarth embeddings summarise a year of multi-sensor data into 64 numbers per pixel. I tested whether they map land cover in Chattogram as well as commercial 3 m PlanetScope and free 10 m Sentinel-2 imagery."
     approach: "Four classes (water, vegetation, built-up, bare) from 993 reference points labelled on high-resolution imagery. Four classifiers (Random Forest, SVM, XGBoost, MLP) on each sensor, evaluated with 5 × 5 spatially blocked cross-validation (1 km blocks) to avoid inflated accuracy from spatial autocorrelation: 300 model runs in total."
+    challenge: "Getting an honest accuracy estimate. With random splits, neighbouring and nearly identical pixels end up in both training and test sets, which inflates accuracy. I grouped points into 1 km spatial blocks, repeated the 5-fold split five times, and used a corrected resampled t-test because overlapping folds make ordinary tests overconfident. I also checked the reference labels against high-resolution imagery over several rounds before fixing the final 993-point set."
     result: "AlphaEarth embeddings gave the highest macro-F1 with every classifier, on average 1 to 2.5 percentage points above PlanetScope and Sentinel-2 in paired fold-by-fold comparisons. The best model (AlphaEarth with an MLP) reached macro-F1 0.943."
     metrics:
       - value: "0.943"
@@ -93,6 +94,7 @@ selected_work:
     status: "Experiments running · first-author paper planned for a Q1 journal"
     question: "Deep networks often confuse water with shadows, dark roofs and wet soil because they learn texture. Water absorbs near-infrared light strongly, so I asked whether building that physics into the network helps it find small, fragmented waterbodies in 4-band PlanetScope imagery."
     approach: "I designed a NIR-absorption attention module (NAAM) that re-weights U-Net features at two scales using a learned near-infrared absorption signal. It is benchmarked against U-Net on raw bands and on bands plus NDWI, with ablations, over five spatial folds and three random seeds on PlanetScope water datasets from several cities."
+    challenge: "Water is a small share of each image, roughly 8 to 17% of pixels in the training, validation and test splits, and many ponds and channels are only a few pixels wide. Both models still miss many of these small features (the yellow areas in the figure). Making the attention help on small, fragmented water, and not only on large ponds, is the main open problem I am working on."
     result: "Early runs show the attention following water edges and channels, and the model recovering waterbodies the baseline misses in some tiles. The full benchmark is still running, so I am not reporting numbers yet."
     metrics:
       - value: "4"
@@ -102,6 +104,15 @@ selected_work:
     figure: "images/naam_example.png"
     figure_caption: "One test tile. Blue = correctly found water, yellow = missed water, orange = false alarm. The NAAM model (right) recovers most of the waterbody the baseline U-Net misses."
     tags: ["PyTorch", "U-Net", "Attention", "PlanetScope", "Google Colab GPU"]
+
+# Questions you want to pursue in a PhD. Shown in the Research section.
+next_questions:
+  - question: "When do geospatial foundation models and satellite embeddings actually beat models trained on local labels, and why?"
+    why: "My AlphaEarth results suggest pretrained embeddings help in a city like Chattogram, but the gain varies with the classifier. With Prithvi I am now testing the same question for water. I want to understand where these models transfer and where they fail."
+  - question: "Can physical knowledge make segmentation models reliable for small, fragmented water in cloudy, data-poor regions?"
+    why: "From hill streams in my MS thesis to ponds in NAAM, the hardest water to map is small. Spectral absorption, terrain and hydrology carry information that pure texture models ignore."
+  - question: "How do we report map accuracy honestly when samples are spatially clustered?"
+    why: "Spatial leakage can make a map look more accurate than it is. I want evaluation and uncertainty estimates that planners in places like Bangladesh can trust, for forests, watersheds and climate risk."
 
 # Three short points on what you bring to a lab.
 strengths:

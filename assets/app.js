@@ -202,7 +202,7 @@
       return '<article class="case' + (w.figure_tall ? " has-tall" : " has-wide") + '">' +
         '<div class="case-head"><p class="case-n">Case ' + (i + 1) + " of " + items.length + "</p><h3>" + esc(w.title) + "</h3>" +
         (w.status ? '<p class="case-status">' + esc(w.status) + "</p>" : "") + "</div>" +
-        '<div class="case-body"><div class="case-text">' + block("Question", w.question) + block("What I did", w.approach) + block("What I found", w.result) +
+        '<div class="case-body"><div class="case-text">' + block("Question", w.question) + block("What I did", w.approach) + block("What was hard", w.challenge) + block("What I found", w.result) +
         (metrics ? '<div class="metrics">' + metrics + "</div>" : "") + tags + "</div>" + fig + "</div>" + fig2 + "</article>";
     }).join("");
     return section("selected", "Selected research", H(d, "selected", "Selected research"), '<div class="cases">' + html + "</div>", "Figures from my own experiments", true);
@@ -231,8 +231,12 @@
       "<small>Water absorbs strongly in the near-infrared, around 0.86 µm, while plants reflect it. Several of my projects ask how a neural network can use that contrast directly.</small>" +
       '<div class="spec-wrap"><div class="spectrum" aria-hidden="true">' +
       '<span style="left:6%">Blue</span><span style="left:20%">Green</span><span style="left:38%">Red</span><span style="left:72%">Near-infrared</span></div></div></div>';
+    var qs = arr(d.next_questions).map(function (q) {
+      return '<article class="nq"><h3>' + esc(q.question) + "</h3>" + (q.why ? "<p>" + esc(q.why) + "</p>" : "") + "</article>";
+    }).join("");
+    var qsHTML = qs ? '<p class="subhead">Questions I want to work on in a PhD</p><div class="nqs">' + qs + "</div>" : "";
     return section("research", "Research", H(d, "research", "Research"),
-      '<div class="statement">' + paras + "</div>" + formula + (themes ? '<div class="themes">' + themes + "</div>" : ""));
+      '<div class="statement">' + paras + "</div>" + qsHTML + formula + (themes ? '<div class="themes">' + themes + "</div>" : ""));
   }
 
   function pubItem(p) {

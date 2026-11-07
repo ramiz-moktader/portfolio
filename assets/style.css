@@ -301,3 +301,10 @@ section#selected{background:var(--raised)}
 .case.has-wide .case-text{max-width:820px}
 .wide-fig{max-width:760px}
 @media (max-width:520px){.metrics{grid-template-columns:repeat(auto-fit,minmax(96px,1fr))}.metric b{font-size:1.45rem}.metric{padding-right:10px}.metric + .metric{padding-left:10px}}
+
+/* ---------- next questions ---------- */
+.nqs{display:grid;gap:12px;margin-top:10px}
+.nq{display:grid;gap:6px;padding:16px 18px 16px 52px;border-radius:var(--radius);background:var(--surface);position:relative}
+.nq::before{content:"?";position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:700;font-size:14px;color:var(--bg);background:var(--accent)}
+.nq h3{font-size:1.08rem}
+.nq p{font-size:15.5px;line-height:1.5;color:var(--muted);margin:0}
