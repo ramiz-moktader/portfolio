@@ -159,7 +159,7 @@
     var p = d.profile || {};
     var acts = [];
     if (p.cv_url) acts.push('<a class="btn primary" href="' + esc(p.cv_url) + '" target="_blank" rel="noopener">Download CV</a>');
-    acts.push('<a class="btn' + (p.cv_url ? "" : " primary") + '" href="#publications">See publications</a>');
+    acts.push('<a class="btn' + (p.cv_url ? "" : " primary") + '" href="#selected">See my research</a>');
     if (p.github) acts.push('<a class="btn" href="' + esc(p.github) + '" target="_blank" rel="noopener">GitHub ↗</a>');
     if (p.google_scholar) acts.push('<a class="btn" href="' + esc(p.google_scholar) + '" target="_blank" rel="noopener">Google Scholar ↗</a>');
     if (p.orcid) acts.push('<a class="btn" href="' + esc(p.orcid) + '" target="_blank" rel="noopener">ORCID ↗</a>');
@@ -168,7 +168,8 @@
     var stats = arr(d.highlights).map(function (h) { return '<div class="stat"><b>' + esc(h.value) + "</b><span>" + esc(h.label) + "</span></div>"; }).join("");
 
     return '<header class="hero"><div class="wrap wide"><div class="hero-inner"><div>' +
-      '<div class="coord"><span>' + esc(p.coordinates) + "</span><span>" + esc(p.location) + "</span></div>" +
+      '<div class="id-row">' + (p.photo ? '<img class="avatar" src="' + esc(p.photo) + '" alt="Photo of ' + esc(p.name) + '" width="76" height="76">' : "") +
+      '<div class="coord"><span>' + esc(p.coordinates) + "</span><span>" + esc(p.location) + "</span></div></div>" +
       "<h1>" + nameHTML + "</h1>" +
       '<p class="role">' + esc(p.role) + "</p>" +
       (p.status ? '<p class="status">' + esc(p.status) + "</p>" : "") +
@@ -185,6 +186,32 @@
     return '<div class="now"><div class="wrap wide"><p class="now-head">Currently working on</p><div class="now-list">' +
       items.map(function (n) { return "<article><h3>" + esc(n.title) + "</h3><p>" + esc(n.text) + "</p></article>"; }).join("") +
       "</div></div></div>";
+  }
+
+
+  function selectedWork(d) {
+    var items = arr(d.selected_work); if (!items.length) return "";
+    var html = items.map(function (w, i) {
+      var metrics = arr(w.metrics).map(function (m) { return '<div class="metric"><b>' + esc(m.value) + "</b><span>" + esc(m.label) + "</span></div>"; }).join("");
+      var fig = w.figure ? '<figure class="case-fig' + (w.figure_tall ? " tall" : "") + '"><a href="' + esc(w.figure) + '" target="_blank" rel="noopener"><img src="' + esc(w.figure) + '" alt="' + esc(w.figure_caption || w.title) + '" loading="lazy"></a>' +
+        (w.figure_caption ? "<figcaption>" + esc(w.figure_caption) + "</figcaption>" : "") + "</figure>" : "";
+      var fig2 = w.second_figure ? '<figure class="case-fig wide-fig"><a href="' + esc(w.second_figure) + '" target="_blank" rel="noopener"><img src="' + esc(w.second_figure) + '" alt="' + esc(w.second_caption || "") + '" loading="lazy"></a>' +
+        (w.second_caption ? "<figcaption>" + esc(w.second_caption) + "</figcaption>" : "") + "</figure>" : "";
+      var tags = arr(w.tags).length ? '<div class="techs">' + arr(w.tags).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + "</div>" : "";
+      var block = function (label, text) { return text ? '<div class="qa"><p class="qa-k">' + label + "</p><p>" + esc(text) + "</p></div>" : ""; };
+      return '<article class="case' + (w.figure_tall ? " has-tall" : " has-wide") + '">' +
+        '<div class="case-head"><p class="case-n">Case ' + (i + 1) + " of " + items.length + "</p><h3>" + esc(w.title) + "</h3>" +
+        (w.status ? '<p class="case-status">' + esc(w.status) + "</p>" : "") + "</div>" +
+        '<div class="case-body"><div class="case-text">' + block("Question", w.question) + block("What I did", w.approach) + block("What I found", w.result) +
+        (metrics ? '<div class="metrics">' + metrics + "</div>" : "") + tags + "</div>" + fig + "</div>" + fig2 + "</article>";
+    }).join("");
+    return section("selected", "Selected research", H(d, "selected", "Selected research"), '<div class="cases">' + html + "</div>", "Figures from my own experiments", true);
+  }
+
+  function strengths(d) {
+    var items = arr(d.strengths); if (!items.length) return "";
+    return '<div class="strengths"><div class="wrap wide"><p class="now-head">What I bring to a lab</p><div class="str-list">' +
+      items.map(function (s) { return "<article><h3>" + esc(s.title) + "</h3><p>" + esc(s.text) + "</p></article>"; }).join("") + "</div></div></div>";
   }
 
   var THEME_SWATCH = { GFM: ["fcc", [8, 8, 40]], Water: ["mask", [40, 44, 40]], LULC: ["class", [10, 30, 40]], Forest: ["fcc", [60, 4, 40]] };
@@ -394,7 +421,7 @@
     var p = d.profile || {}, sc = makeScene();
     if (p.name) document.title = p.name;
     document.getElementById("app").innerHTML =
-      hero(d) + nowStrip(d) + research(d) + publications(d) + software(d) + experience(d) + eduAwards(d) + teaching(d) + skills(d) + contact(d) +
+      hero(d) + nowStrip(d) + selectedWork(d) + strengths(d) + research(d) + publications(d) + software(d) + experience(d) + eduAwards(d) + teaching(d) + skills(d) + contact(d) +
       '<footer class="wrap"><span>© ' + new Date().getFullYear() + " " + esc(p.name) + "</span><span>" + (d.updated ? "Updated " + esc(d.updated) : "") + "</span></footer>";
     wire(d, sc);
   }

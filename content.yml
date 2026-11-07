@@ -30,7 +30,7 @@ profile:
   linkedin: ""
   researchgate: ""
   cv_url: ""                  # e.g. files/cv.pdf after you upload your CV into a "files" folder
-  photo: ""                   # e.g. images/photo.jpg after you upload a photo into an "images" folder
+  photo: "images/headshot.jpg"   # replace the file in the "images" folder to change it
   summary: >-
     I build machine learning methods that map water, forests and cities from
     satellite imagery. I trained as a forester at the University of Chittagong,
@@ -40,6 +40,7 @@ profile:
 
 # Big headings for each section. Change the words freely.
 headings:
+  selected: "Recent work, with the evidence"
   research: "Mapping water and land with models that understand the physics"
   publications: "Papers and manuscripts"
   software: "Tools I build and share"
@@ -62,6 +63,54 @@ now:
     text: "Fine-tuning NASA–IBM's geospatial foundation model for surface water segmentation."
   - title: "Storm Stand"
     text: "A hybrid physics–machine learning simulator of cyclone windthrow risk for five tree species."
+
+# ------------------------------------------------------------
+# SELECTED RESEARCH — shown near the top as illustrated case studies.
+# Put figures in the "images" folder and give the path in "figure".
+# Keep every number here identical to your paper or results files.
+# ------------------------------------------------------------
+selected_work:
+  - title: "Do satellite embeddings map a city better than raw imagery?"
+    status: "Manuscript in preparation · target: Scientific Reports"
+    question: "Google's AlphaEarth embeddings summarise a year of multi-sensor data into 64 numbers per pixel. I tested whether they map land cover in Chattogram as well as commercial 3 m PlanetScope and free 10 m Sentinel-2 imagery."
+    approach: "Four classes (water, vegetation, built-up, bare) from 993 reference points labelled on high-resolution imagery. Four classifiers (Random Forest, SVM, XGBoost, MLP) on each sensor, evaluated with 5 × 5 spatially blocked cross-validation (1 km blocks) to avoid inflated accuracy from spatial autocorrelation: 300 model runs in total."
+    result: "AlphaEarth embeddings gave the highest macro-F1 with every classifier, on average 1 to 2.5 percentage points above PlanetScope and Sentinel-2 in paired fold-by-fold comparisons. The best model (AlphaEarth with an MLP) reached macro-F1 0.943."
+    metrics:
+      - value: "0.943"
+        label: "best macro-F1 (AlphaEarth + MLP)"
+      - value: "300"
+        label: "model runs across 25 spatial test folds"
+      - value: "993"
+        label: "hand-labelled reference points"
+    figure: "images/lulc_map_ccc.jpg"
+    figure_caption: "Land cover map of Chattogram City Corporation from the best model."
+    figure_tall: true
+    second_figure: "images/lulc_accuracy.png"
+    second_caption: "Accuracy by sensor and classifier, macro-F1 in each spatial test fold, and paired fold-level differences with corrected 95% confidence intervals."
+    tags: ["AlphaEarth", "PlanetScope", "Sentinel-2", "Spatial CV", "scikit-learn", "PyTorch"]
+
+  - title: "Teaching a network the physics of water"
+    status: "Experiments running · first-author paper planned for a Q1 journal"
+    question: "Deep networks often confuse water with shadows, dark roofs and wet soil because they learn texture. Water absorbs near-infrared light strongly, so I asked whether building that physics into the network helps it find small, fragmented waterbodies in 4-band PlanetScope imagery."
+    approach: "I designed a NIR-absorption attention module (NAAM) that re-weights U-Net features at two scales using a learned near-infrared absorption signal. It is benchmarked against U-Net on raw bands and on bands plus NDWI, with ablations, over five spatial folds and three random seeds on PlanetScope water datasets from several cities."
+    result: "Early runs show the attention following water edges and channels, and the model recovering waterbodies the baseline misses in some tiles. The full benchmark is still running, so I am not reporting numbers yet."
+    metrics:
+      - value: "4"
+        label: "bands only: blue, green, red, NIR"
+      - value: "5 × 3"
+        label: "spatial folds × random seeds per model"
+    figure: "images/naam_example.png"
+    figure_caption: "One test tile. Blue = correctly found water, yellow = missed water, orange = false alarm. The NAAM model (right) recovers most of the waterbody the baseline U-Net misses."
+    tags: ["PyTorch", "U-Net", "Attention", "PlanetScope", "Google Colab GPU"]
+
+# Three short points on what you bring to a lab.
+strengths:
+  - title: "Careful evaluation"
+    text: "I use spatially blocked cross-validation, repeated folds and corrected statistical tests, because remote sensing accuracy is easy to overstate."
+  - title: "I build the tools I need"
+    text: "GeoFlow, a QGIS plugin for deep learning patches, and a spatial data splitter came out of problems in my own research."
+  - title: "Field to model"
+    text: "Years of household surveys, forest plots and watershed planning in Bangladesh mean I know where the labels come from and what the maps are for."
 
 # Short numbers shown under the introduction. Keep 3–4 items.
 highlights:
